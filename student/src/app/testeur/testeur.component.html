@@ -1,0 +1,12 @@
+<form [formGroup]="classForm" (ngSubmit)="onSubmit()">
+
+    <label for="first-name">Prénom: </label>
+    <input id="first-name" type="text" formControlName="prenom">
+  
+    <label for="last-name">Nom: </label>
+    <input id="last-name" type="text" formControlName="nom">
+
+
+    <button type="submit" [disabled]="!classForm.valid">Créer</button>
+  
+  </form>

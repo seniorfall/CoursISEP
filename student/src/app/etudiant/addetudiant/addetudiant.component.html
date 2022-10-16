@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="card-body">
+        <h1 class="text-center">Ajouter un étudiant</h1>
+<form [formGroup]="etudiant" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Code</label>
+    <input type="text" class="form-control" formControlName="code">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Nom</label>
+    <input type="text" class="form-control" formControlName="nom">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Prénom</label>
+    <input type="text" class="form-control" formControlName="prenom">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Sexe</label>
+    <input type="text" class="form-control" formControlName="sexe">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Date de naissance</label>
+    <input type="date" class="form-control" formControlName="dateNaissance">
+  </div>
+
+  <div [ngClass]="test" >
+    <button type="submit" class="btn btn-primary" [disabled]="!etudiant.valid">Valider</button>
+  </div>
+
+  <p></p>
+</form>
+  </div>
+</div>

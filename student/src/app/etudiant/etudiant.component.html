@@ -1,0 +1,29 @@
+
+<h1 class="text-center">Liste des étudiants</h1>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end" style="margin-bottom: 2%;">
+  <a routerLink="/addEtudiant" class="btn btn-outline-primary" type="button">Ajouter</a>
+</div>
+
+<table class="table">
+    <thead [ngClass]="isbool ?'table-dark':'table-primary'">
+      <tr>
+        <td>Nom</td>
+        <td>Prénom</td>
+        <td>Sexe</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers | paginate: { itemsPerPage: 5, currentPage: pages }">
+            <td>{{ customer.nom }}</td>
+            <td>{{ customer.prenom }}</td>
+            <td> 
+              <p *ngIf=" customer.sexe; else elseBlock">Masculin</p>
+               <ng-template #elseBlock>Feminin</ng-template>
+            </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <pagination-controls (pageChange)="pages = $event"></pagination-controls>
+

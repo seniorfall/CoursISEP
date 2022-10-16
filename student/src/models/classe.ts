@@ -1,19 +1,13 @@
 
 export class Classe{
 
-    constructor(code='',nom='',annee=0,nombre=0) {
-        this.code=code;
-        this.nom=nom;
-        this.annee=annee;
-        this.nombre=nombre;
-    }
     
-    code : string;
+    code : string=''
 
-    nom : string;
+    name : string=''
 
-    annee : number;
+    annee : string=''
 
-    nombre : number;
+    effectif:number=0
 
 }

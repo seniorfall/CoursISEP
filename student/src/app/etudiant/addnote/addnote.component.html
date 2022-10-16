@@ -1,0 +1,37 @@
+<div class="card">
+    <div class="card-body">
+        <h1 class="text-center">Ajouter une note</h1>
+<form [formGroup]="note" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Année</label>
+    <input type="date" class="form-control" formControlName="annee" >
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Note</label>
+    <input type="number" class="form-control" formControlName="note" >
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Remarque</label>
+    <textarea class="form-control" formControlName="commentaire" rows="4"></textarea>
+  </div>
+  <div class="mb-3" formArrayName="observations">
+    <h2>Remarques</h2>
+    <button class="btn btn-outline-info" type="button" (click)="addAlias()">+ Ajouter une remarque</button>
+  
+    <div *ngFor="let alias of observations.controls; let i=index">
+      <!-- The repeated alias template -->
+      <label class="form-label" for="alias-{{ i }}">Remarque :</label>
+      <input class="form-control" id="alias-{{ i }}" type="text" [formControlName]="i">
+    </div>
+  </div>
+  <div class="mb-3">
+    <button type="submit" class="btn btn-primary" [disabled]="!note.valid">Valider</button>
+  </div>
+</form>
+</div>
+</div>
+
+<label for="name">Name: </label>
+<input id="name" type="text" [formControl]="name">
+
+{{name.value}}

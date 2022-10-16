@@ -1,0 +1,20 @@
+<h1 class="text-center">Création d'une formation</h1>
+
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Sigle</label>
+        <input type="text" id="sigle" class="form-control" formControlName="sigle" required>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Nom</label>
+        <input type="text" class="form-control" formControlName="name" >
+      </div>
+      <div class="row justify-content-evenly">
+        <div class="col-4">
+            <button  class="btn btn-primary" type="submit" [disabled]="!form.valid">Créer</button>
+        </div>
+      </div>
+
+  </form>

@@ -6,12 +6,17 @@
       <tr>
         <td>Nom</td>
         <td>Prénom</td>
-      </tr>>
+        <td>Sexe</td>
+      </tr>
     </thead>
     <tbody>
       <tr *ngFor="let customer of customers">
             <td>{{ customer.nom }}</td>
             <td>{{ customer.prenom }}</td>
+            <td> 
+              <p *ngIf=" customer.sexe; else elseBlock">Masculin</p>
+               <ng-template #elseBlock>Feminin</ng-template>
+            </td>
       </tr>
     </tbody>
   </table>

@@ -1,1 +1,16 @@
-<p>home works!</p>
+
+<h1 class="text-center">Liste des formations</h1>
+
+<div *ngFor="let item of formations" class="card text-center separateur">
+    <div class="card-header">
+      Formation
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{item.sigle}}</h5>
+      <p class="card-text">{{item.name}}</p>
+      <a [routerLink]="['/details', item.sigle]"  class="btn btn-primary">Détails</a>
+    </div>
+    <div class="card-footer text-muted">
+      2020
+    </div>
+  </div>

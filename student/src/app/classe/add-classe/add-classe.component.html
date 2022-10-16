@@ -1,0 +1,32 @@
+<h1 class="text-center">Création d'une classe</h1>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Nom</label>
+        <input type="text" class="form-control" minlength="4" [(ngModel)]="classe.name" #name="ngModel" required>
+        
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+
+            <div *ngIf="name.errors?.['required']">
+                Le nom est obligatoire.
+            </div>
+            <div *ngIf="name.errors?.['minlength']">
+                Le nom de classe doit être au minimun de 4
+            </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Année</label>
+        <input type="text" class="form-control" [(ngModel)]="classe.annee" #annee="ngModel" required>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Effectif</label>
+        <input type="number" class="form-control" [(ngModel)]="classe.effectif" #effectif="ngModel" >
+      </div>
+      <div class="row justify-content-evenly">
+        <div class="col-4">
+            <button  class="btn btn-primary" type="button" (click)="onSubmit()" [disabled]="name.invalid && annee.invalid">Créer</button>
+        </div>
+      </div>
+
+
+
